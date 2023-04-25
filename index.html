@@ -6,15 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Soporte tecnico</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
     
     <nav class="navbar navbar-expand-lg navegacion">
         <div class="container-fluid">
-          <a class="navbar-brand icon" href="#">SoporteTecnico</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+          <a class="navbar-brand icon" href="index.html">SoporteTecnico</a>
+          <button class="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon btn-primary"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
@@ -40,44 +40,52 @@
 
     <div class="container mt-5">
         <div class="row">
-            <!-- LISTA DE CHATS -->
-            <div class="listaChats col-4">
-                <div class="chat">
-                    <img class="img_chat" src="https://picsum.photos/id/532/600/400" width="100px" alt="">
+            <!-- LISTA DE CHATS onclick="mostrarChat(1)" -->
+            <div id="lista-chats" class="listaChats col-lg-4">
+                <div id="chat-1" class="chat" onclick="ocultarListaYMostrarChat(1)">    
+                    <img class="img_chat" src="https://picsum.photos/id/123/600/400" width="100px" alt="">
                     
                     <div class="datos_chat">
                         <h3 class="">Jose</h3>
-                        <p class="fw-bold">Mensaje recibido contacto 1</p>
+                        <p id="textoChat1" class="fw-bold">Mensaje recibido contacto 1</p>
                         <span >Hace X horas/días</span>
                     </div>
                 </div>
-                <div class="chat">
-                    <img class="img_chat" src="https://picsum.photos/id/532/600/400" width="100px" alt="">
+                <div id="chat-2" class="chat" onclick="ocultarListaYMostrarChat(2)">
+                    <img class="img_chat" src="https://picsum.photos/id/456/600/400" width="100px" alt="">
                     
                     <div class="datos_chat">
-                        <h3 class="">Jose</h3>
-                        <p class="fw-bold">Mensaje recibido contacto 1</p>
+                        <h3 class="">Raul</h3>
+                        <p id="textoChat2" class="fw-bold">Mensaje recibido contacto 1</p>
                         <span >Hace X horas/días</span>
                     </div>
                 </div>
-                <div class="chat">
-                    <img class="img_chat" src="https://picsum.photos/id/532/600/400" width="100px" alt="">
+                <div id="chat-3" class="chat"  onclick="ocultarListaYMostrarChat(3)">
+                    <img class="img_chat" src="https://picsum.photos/id/789/600/400" width="100px" alt="">
                     
                     <div class="datos_chat">
-                        <h3 class="">Jose</h3>
-                        <p class="fw-bold">Mensaje recibido contacto 1</p>
+                        <h3 class="">Cris</h3>
+                        <p id="textoChat3" class="fw-bold">Mensaje recibido contacto 1</p>
                         <span >Hace X horas/días</span>
                     </div>
                 </div>
             </div>
             <!-- CHATS ACTIVOS -->
-            <div class="col-7 chatActivo">
+            <div id="chat1" class="col-lg-7 chatActivo ">
                 <div class="headerChat">
-                    <img src="https://picsum.photos/id/532/600/400" width="100px" alt="">
+                    <button id="btnRetroceso-Chat1" class="btn btnRetroceder dNone" type="button" aria-expanded="false">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" width="30" height="30">
+                          <path d="M9.4 233.4c-12.5 12.5-12.5 32.8 
+                          0 45.3l192 192c12.5 12.5 32.8 12.5 45.3 
+                          0s12.5-32.8 0-45.3L77.3 256 246.6 86.6c12.5-12.5 
+                          12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-192 192z"/>
+                        </svg>
+                      </button>
+                    <img src="https://picsum.photos/id/123/600/400" width="100px" alt="">
                     <h3>Jose</h3>
                 </div>
 
-                <div class="chatBody">
+                <div id="bloque-chat-1" class="chatBody">
                     <!-- Aquí se mostrarán los mensajes de la conversación activa -->
                     <div class="message-container sender">Mensaje enviado por el remitente</div>
                     <div class="message-container sender">Otro mensaje enviado por el remitente</div>
@@ -99,11 +107,100 @@
                               </ul>
                         </div>
 
-                        <input class=" col-8" type="text" placeholder="Escribir mensaje...">
-                        <button class="btn formBtn col-2" type="button" onclick="enviarMensaje(1)">Enviar</button>
+                        <input id="input-chat-1" class=" col-8" type="text" placeholder="Escribir mensaje...">
+                        <button id="boton-chat-1" class="btn formBtn col-2" type="button" onclick="enviarMensaje(1)">Enviar</button>
                     </form>
                 </div>
             </div>
+
+            <div id="chat2" class="col-lg-7  chatActivo">
+
+              <div class="headerChat">
+                <button id="btnRetroceso-Chat2" class="btn btnRetroceder dNone" type="button" aria-expanded="false">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" width="30" height="30">
+                      <path d="M9.4 233.4c-12.5 12.5-12.5 32.8 
+                      0 45.3l192 192c12.5 12.5 32.8 12.5 45.3 
+                      0s12.5-32.8 0-45.3L77.3 256 246.6 86.6c12.5-12.5 
+                      12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-192 192z"/>
+                    </svg>
+                  </button>
+                  <img src="https://picsum.photos/id/456/600/400" width="100px" alt="">
+                  <h3>Raul</h3>
+              </div>
+
+              <div id="bloque-chat-2" class="chatBody">
+                  <!-- Aquí se mostrarán los mensajes de la conversación activa -->
+                  <div class="message-container sender">Mensaje enviado por el remitente</div>
+                  <div class="message-container sender">Otro mensaje enviado por el remitente</div>
+                  <div class="message-container receiver">Mensaje recibido por el receptor</div>
+                  <div class="message-container sender">Mensaje enviado después de recibir uno</div>
+                  <div class="message-container sender">Mensaje enviado por el remitente</div>
+                  <div class="message-container sender">Otro mensaje enviado por el remitente</div>
+                  <div class="message-container receiver">Mensaje recibido contacto 1</div>
+              </div> 
+
+              <div class="chatInput">
+                  <form class="form ">
+                      <div class="dropdown col-1">
+                          <button class="btn btnDrop dropdown-toggle" type="button" id="Dropdown" data-bs-toggle="dropdown" aria-expanded="false"><img src="assets/img/paperclip.svg" alt=""></button>
+                          <ul class="dropdown-menu" aria-labelledby="Dropdown">
+                              <li><button class="dropdown-item">Imagen</button></li>
+                              <li><button class="dropdown-item">video</button></li>
+                              <li><button class="dropdown-item">documento</button></li>
+                            </ul>
+                      </div>
+
+                      <input id="input-chat-2" class=" col-8" type="text" placeholder="Escribir mensaje...">
+                      <button id="boton-chat-2" class="btn formBtn col-2" type="button" onclick="enviarMensaje(2)">Enviar</button>
+                  </form>
+              </div>
+          </div>
+
+          <div id="chat3" class="col-lg-7  chatActivo">
+
+            <div class="headerChat">
+                <button id="btnRetroceso-Chat3" class="btn btnRetroceder dNone" type="button" aria-expanded="false">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" width="30" height="30">
+                      <path d="M9.4 233.4c-12.5 12.5-12.5 32.8 
+                      0 45.3l192 192c12.5 12.5 32.8 12.5 45.3 
+                      0s12.5-32.8 0-45.3L77.3 256 246.6 86.6c12.5-12.5 
+                      12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-192 192z"/>
+                    </svg>
+                  </button>
+                <img src="https://picsum.photos/id/789/600/400" width="100px" alt="">
+                <h3>Cris</h3>
+            </div>
+
+            <div id="bloque-chat-3" class="chatBody">
+                <!-- Aquí se mostrarán los mensajes de la conversación activa -->
+                <div class="message-container sender">Mensaje enviado por el remitente</div>
+                <div class="message-container sender">Otro mensaje enviado por el remitente</div>
+                <div class="message-container receiver">Mensaje recibido por el receptor</div>
+                <div class="message-container sender">Mensaje enviado después de recibir uno</div>
+                <div class="message-container sender">Mensaje enviado por el remitente</div>
+                <div class="message-container sender">Otro mensaje enviado por el remitente</div>
+                <div class="message-container receiver">Mensaje recibido contacto 1</div>
+            </div> 
+
+            <div class="chatInput">
+                <form class="form ">
+                    <div class="dropdown col-1">
+                        <button class="btn btnDrop dropdown-toggle" type="button" id="Dropdown" data-bs-toggle="dropdown" aria-expanded="false"><img src="assets/img/paperclip.svg" alt=""></button>
+                        <ul class="dropdown-menu" aria-labelledby="Dropdown">
+                            <li><button class="dropdown-item">Imagen</button></li>
+                            <li><button class="dropdown-item">video</button></li>
+                            <li><button class="dropdown-item">documento</button></li>
+                          </ul>
+                    </div>
+
+                    <input id="input-chat-3" class=" col-8" type="text" placeholder="Escribir mensaje...">
+                    <button id="boton-chat-3" class="btn formBtn col-2" type="button" onclick="enviarMensaje(3)">Enviar</button>
+                </form>
+            </div>
+        </div>
+
+    
+          
         </div>
     </div>
 
@@ -111,6 +208,8 @@
         <p>Soporte Tectico</p>
     </footer>
 
+
+    <script src="assets/js/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
 </html>
